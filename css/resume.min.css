@@ -217,11 +217,16 @@ a:hover {
 }
 
 @media (max-width: 600px) {
-  .containers .box:hover .content {
+  .containers .box{
+    margin:2rem  1rem ;  }
+  .containers .box .content {
     transform: translate(0, 2rem);
   }
-  .containers .box:hover .imgBox {
+  .containers .box .imgBox {
     transform: translate(0, -2rem);
+  }
+  .header-qoute{
+    font-size: 1.5rem !important  ;
   }
 }
 
@@ -326,7 +331,10 @@ a:hover {
 .header-qoute{
   font-family: "Dancing Script", cursive;
   text-align: center;
-font-size: 3rem;}
+  font-size: 4rem
+
+
+}
 
 /* flip */
 
