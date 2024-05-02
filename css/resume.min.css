@@ -344,10 +344,14 @@ a:hover {
   width: 300px;
   height: 300px;
   perspective: 1000px;
+  border-radius: 1rem;
+
 }
 
 .flip-card-inner {
   position: relative;
+  border-radius: 1rem;
+
   width: 100%;
   height: 100%;
   text-align: center;
@@ -380,6 +384,7 @@ justify-content: center;
 flex-wrap: wrap;
 }
 .flip-card-front {
+  border-radius: 1rem;
  
   background-position: center !important;
   background-size: contain !important;
@@ -391,6 +396,8 @@ flex-wrap: wrap;
 }
 
 .flip-card-back {
+  border-radius: 1rem;
+
   background-position: center !important;
   background-size: contain !important;
   background-repeat: no-repeat !important;
