@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Abdelrahman Youssef · Front-End Developer</title>
+<meta name="description" content="Portfolio of Abdelrahman Youssef, a front-end web developer from Giza, Egypt. React, JavaScript, PHP and MySQL. Projects, experience and contact.">
+<meta property="og:title" content="Abdelrahman Youssef · Front-End Developer">
+<meta property="og:description" content="Front-end web developer building clean, fast and user-friendly websites.">
+<meta property="og:image" content="img/p-flavvora.webp">
+<link rel="icon" type="image/png" href="img/favicon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Sora:wght@600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b0d12;--bg2:#12151d;--card:#161a24;--line:#252b39;--tx:#eef1f7;--mu:#98a2b8;--ac:#e3b23c;--ac2:#ff7a59;--acfg:#17130a;--sh:0 20px 50px -20px rgba(0,0,0,.6)}
+:root[data-theme=light]{--bg:#f7f6f2;--bg2:#efede6;--card:#fff;--line:#e2dfd4;--tx:#14161c;--mu:#5b6377;--ac:#c98a00;--ac2:#e2562f;--acfg:#fff;--sh:0 20px 40px -24px rgba(40,30,0,.35)}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{font-family:Inter,system-ui,Segoe UI,Arial,sans-serif;background:var(--bg);color:var(--tx);line-height:1.65;-webkit-font-smoothing:antialiased;padding-bottom:env(safe-area-inset-bottom,0)}
+h1,h2,h3{font-family:Sora,Inter,system-ui,sans-serif;line-height:1.15;letter-spacing:-.02em}
+a{color:inherit;text-decoration:none}img{max-width:100%;display:block}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+section{padding:92px 0}
+.alt{background:var(--bg2)}
+.eyebrow{color:var(--ac);font-weight:600;font-size:.82rem;letter-spacing:.14em;text-transform:uppercase;margin-bottom:12px}
+h2{font-size:clamp(1.9rem,4vw,2.7rem);margin-bottom:14px}
+.lead{color:var(--mu);max-width:620px;margin-bottom:44px}
+.btn{display:inline-flex;align-items:center;gap:8px;padding:13px 24px;border-radius:999px;font-weight:600;border:1px solid var(--line);transition:.25s;cursor:pointer;background:none;color:var(--tx);font:inherit;font-weight:600}
+.btn:hover{transform:translateY(-3px);border-color:var(--ac)}
+.btn.p{background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--acfg);border:0;box-shadow:0 12px 28px -10px var(--ac)}
+#bar{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--ac),var(--ac2));z-index:60}
+header{position:fixed;inset:0 0 auto;z-index:50;padding-top:env(safe-area-inset-top,0);backdrop-filter:blur(14px);background:color-mix(in srgb,var(--bg) 78%,transparent);border-bottom:1px solid var(--line)}
+nav{display:flex;align-items:center;justify-content:space-between;height:66px}
+.logo{font-family:Sora,sans-serif;font-weight:800;font-size:1.25rem}.logo span{color:var(--ac)}
+.links{display:flex;gap:6px;align-items:center}
+.links a{padding:8px 13px;border-radius:999px;color:var(--mu);font-size:.93rem;font-weight:500;transition:.2s}
+.links a:hover,.links a.on{color:var(--tx);background:var(--card)}
+.links a.on{color:var(--ac)}
+.ic{width:40px;height:40px;border-radius:50%;border:1px solid var(--line);background:var(--card);color:var(--tx);cursor:pointer;font-size:1rem}
+#burger{display:none}
+.hero{padding:150px 0 90px;position:relative;overflow:hidden}
+.hero:before{content:"";position:absolute;width:620px;height:620px;right:-160px;top:-120px;background:radial-gradient(circle,color-mix(in srgb,var(--ac) 28%,transparent),transparent 65%);filter:blur(10px)}
+.hg{display:grid;grid-template-columns:1.25fr .85fr;gap:56px;align-items:center;position:relative}
+.hero h1{font-size:clamp(2.5rem,6.2vw,4.3rem);margin:8px 0 16px}
+.hero h1 em{font-style:normal;background:linear-gradient(120deg,var(--ac),var(--ac2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.role{font-family:Sora,sans-serif;font-size:clamp(1.15rem,2.4vw,1.5rem);color:var(--mu);min-height:1.8em;margin-bottom:18px}
+.role b{color:var(--tx)}.role i{display:inline-block;width:2px;height:1.1em;background:var(--ac);margin-left:3px;vertical-align:-3px;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.hero p.d{color:var(--mu);max-width:560px;margin-bottom:30px}
+.cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:28px}
+.soc{display:flex;gap:10px}.soc a{width:44px;height:44px;display:grid;place-items:center;border:1px solid var(--line);border-radius:50%;background:var(--card);transition:.25s;font-size:.8rem;font-weight:700}
+.soc a:hover{background:var(--ac);color:var(--acfg);transform:translateY(-3px)}
+.ph{position:relative;justify-self:center;width:min(380px,100%)}
+.ph:before{content:"";position:absolute;inset:18px -18px -18px 18px;border-radius:28px;border:2px solid var(--ac);opacity:.7}
+.ph img{position:relative;border-radius:28px;aspect-ratio:1;object-fit:cover;width:100%;box-shadow:var(--sh)}
+.badge{position:absolute;z-index:2;background:var(--card);border:1px solid var(--line);padding:10px 16px;border-radius:14px;font-size:.84rem;font-weight:600;box-shadow:var(--sh);display:flex;align-items:center;gap:9px;animation:fl 5s ease-in-out infinite}
+.badge.a{left:-26px;bottom:44px}.badge.b{right:-14px;top:30px;animation-delay:-2.5s}
+.dot{width:9px;height:9px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 4px rgba(61,220,132,.2)}
+@keyframes fl{50%{transform:translateY(-9px)}}
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-top:70px}
+.stat{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:22px}
+.stat strong{font-family:Sora,sans-serif;font-size:2.1rem;color:var(--ac);display:block}
+.stat span{color:var(--mu);font-size:.9rem}
+.ag{display:grid;grid-template-columns:1.2fr 1fr;gap:48px}
+.ag p{color:var(--mu);margin-bottom:16px}
+blockquote{border-left:3px solid var(--ac);padding:6px 0 6px 18px;font-family:Sora,sans-serif;font-size:1.1rem;margin-top:26px}
+.facts{display:grid;gap:14px}
+.fact{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.fact h3{font-size:1rem;margin-bottom:4px}.fact p{margin:0;font-size:.92rem}
+.sg{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.sc{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:26px}
+.sc h3{font-size:1.05rem;margin-bottom:18px}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{display:inline-flex;align-items:center;gap:9px;padding:8px 14px;border-radius:12px;background:var(--bg2);border:1px solid var(--line);font-size:.9rem;font-weight:500;transition:.2s}
+.chip:hover{border-color:var(--ac);transform:translateY(-2px)}
+.chip img{width:22px;height:22px;object-fit:contain}
+.soft{margin-top:20px}.soft .chip{background:transparent;color:var(--mu)}
+.pg{display:grid;grid-template-columns:repeat(2,1fr);gap:26px}
+.pc{background:var(--card);border:1px solid var(--line);border-radius:22px;overflow:hidden;transition:.3s;display:flex;flex-direction:column}
+.pc:hover{transform:translateY(-8px);box-shadow:var(--sh);border-color:var(--ac)}
+.pi{overflow:hidden;aspect-ratio:2/1;background:var(--bg2)}
+.pi img{width:100%;height:100%;object-fit:cover;transition:.6s}.pc:hover .pi img{transform:scale(1.06)}
+.pb{padding:24px;display:flex;flex-direction:column;gap:10px;flex:1}
+.pb h3{font-size:1.3rem}.pb p{color:var(--mu);font-size:.95rem;flex:1}
+.tag{font-size:.74rem;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--ac)}
+.lk{font-weight:600;color:var(--ac);margin-top:6px}.lk:hover{text-decoration:underline}.lk.off{color:var(--mu)}
+.eg{display:grid;grid-template-columns:1.25fr 1fr;gap:48px}
+.tl{border-left:2px solid var(--line);padding-left:26px;display:grid;gap:30px}
+.ti{position:relative}.ti:before{content:"";position:absolute;left:-33px;top:7px;width:12px;height:12px;border-radius:50%;background:var(--ac);box-shadow:0 0 0 5px var(--bg)}
+.alt .ti:before{box-shadow:0 0 0 5px var(--bg2)}
+.dt{font-size:.82rem;color:var(--ac);font-weight:600;letter-spacing:.05em}
+.ti h3{font-size:1.1rem;margin:3px 0 1px}.ti .o{color:var(--mu);font-size:.93rem;font-weight:500}.ti p{color:var(--mu);font-size:.94rem;margin-top:8px}
+.sub{font-family:Sora,sans-serif;font-size:1.25rem;margin-bottom:26px}
+.ag3{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+.ac{background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;transition:.3s}
+.ac:hover{transform:translateY(-6px);border-color:var(--ac)}
+.ac .im{position:relative;aspect-ratio:4/3;overflow:hidden}.ac .im img.m{width:100%;height:100%;object-fit:cover}
+.ac .im img.l{position:absolute;left:14px;bottom:14px;width:48px;height:48px;border-radius:12px;border:2px solid #fff;object-fit:cover;background:#fff}
+.ac .b{padding:20px}.ac h3{font-size:1.02rem;margin-bottom:2px}.ac .o{color:var(--ac);font-size:.85rem;font-weight:600}.ac p{color:var(--mu);font-size:.9rem;margin-top:8px}
+.ac.t .b{padding:24px}
+.cert{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:6px}
+.cert div{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px 18px;font-size:.92rem;font-weight:500}
+.cert div:before{content:"★";color:var(--ac);margin-right:9px}
+.fl{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:30px}
+.fl button{padding:9px 18px;border-radius:999px;border:1px solid var(--line);background:var(--card);color:var(--mu);font:inherit;font-size:.9rem;font-weight:600;cursor:pointer;transition:.2s}
+.fl button:hover{color:var(--tx);border-color:var(--ac)}.fl button.on{background:linear-gradient(135deg,var(--ac),var(--ac2));color:var(--acfg);border-color:transparent}
+.hw{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+.hc{all:unset;box-sizing:border-box;cursor:pointer;background:var(--card);border:1px solid var(--line);border-radius:20px;overflow:hidden;display:flex;flex-direction:column;transition:.3s;animation:hp .5s both}
+.hc:hover,.hc:focus-visible{transform:translateY(-8px) rotate(-.4deg);border-color:var(--ac);box-shadow:var(--sh)}
+.hc[hidden]{display:none}
+@keyframes hp{from{opacity:0;transform:scale(.94)}}
+.hi{display:block;aspect-ratio:4/3;overflow:hidden;background:var(--bg2);padding:14px;position:relative}
+.hi img{width:100%;height:100%;object-fit:cover;object-position:top;border-radius:8px;box-shadow:0 10px 24px -10px rgba(0,0,0,.55);transition:.5s}
+.hc:hover .hi img{transform:scale(1.04)}
+.hb{display:flex;flex-direction:column;gap:4px;padding:18px 20px 22px}
+.hk{font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ac)}
+.hb strong{font-family:Sora,sans-serif;font-size:1.02rem;line-height:1.3}
+.ho{color:var(--mu);font-size:.88rem}.hd{color:var(--mu);font-size:.8rem;font-weight:600}
+#lb{position:fixed;inset:0;z-index:100;background:rgba(5,6,10,.9);display:flex;align-items:center;justify-content:center;flex-direction:column;gap:14px;padding:70px 16px 20px;backdrop-filter:blur(6px)}
+#lb[hidden]{display:none}
+#lb img{max-width:min(1000px,100%);max-height:calc(100vh - 190px);object-fit:contain;border-radius:10px;background:#fff}
+#lb .cp{color:#e8ebf3;text-align:center;max-width:680px;font-size:.95rem}#lb .cp b{display:block;font-family:Sora,sans-serif;font-size:1.1rem}
+#lb button{position:absolute;width:46px;height:46px;border-radius:50%;border:1px solid rgba(255,255,255,.25);background:rgba(255,255,255,.1);color:#fff;font-size:1.5rem;cursor:pointer;line-height:1}
+#lb button:hover{background:var(--ac);color:#17130a}
+#lb .x{top:calc(14px + env(safe-area-inset-top,0px));right:16px}#lb .pv{left:14px;top:50%}#lb .nx{right:14px;top:50%}
+.ct{text-align:center;background:linear-gradient(135deg,color-mix(in srgb,var(--ac) 16%,var(--card)),var(--card));border:1px solid var(--line);border-radius:30px;padding:70px 24px}
+.ct h2{font-size:clamp(2rem,5vw,3.2rem)}.ct .lead{margin:0 auto 30px}
+.cl{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:30px;color:var(--mu);font-size:.95rem}
+.cl a:hover{color:var(--ac)}
+footer{padding:30px 0;border-top:1px solid var(--line);color:var(--mu);font-size:.88rem;text-align:center}
+.rv{opacity:0;transform:translateY(28px);transition:opacity .7s,transform .7s}.rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}html{scroll-behavior:auto}}
+@media(max-width:900px){
+ .hg,.ag,.eg{grid-template-columns:1fr}.ph{order:-1;width:min(280px,80%)}.sg,.ag3,.hw{grid-template-columns:1fr 1fr}.stats{grid-template-columns:1fr 1fr}.pg{grid-template-columns:1fr}
+ #burger{display:inline-block}
+ .links{position:fixed;inset:calc(66px + env(safe-area-inset-top,0px)) 0 auto;flex-direction:column;background:var(--bg);padding:14px 20px 22px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:.3s;align-items:stretch}
+ .links.open{transform:none}.links a{padding:12px 14px}
+ section{padding:70px 0}.hero{padding-top:120px}.badge.a{left:-8px}.badge.b{right:-4px}}
+@media(max-width:560px){.sg,.ag3,.hw{grid-template-columns:1fr}#lb .pv,#lb .nx{top:auto;bottom:16px}}
+</style>
+</head>
+<body>
+<div id="bar"></div>
+<header><div class="wrap"><nav>
+ <a class="logo" href="#top">A<span>Y</span>.</a>
+ <div class="links" id="links">
+  <a href="#about">About</a><a href="#skills">Skills</a><a href="#projects">Projects</a><a href="#experience">Experience</a><a href="#activities">Leadership</a><a href="#honors">Honors</a><a href="#contact">Contact</a>
+ </div>
+ <div style="display:flex;gap:8px"><button class="ic" id="theme" aria-label="Toggle light or dark theme">◐</button><button class="ic" id="burger" aria-label="Menu">☰</button></div>
+</nav></div></header>
+
+<main id="top">
+<section class="hero"><div class="wrap hg">
+ <div>
+  <div class="eyebrow">Front-End Developer · Giza, Egypt</div>
+  <h1>Hi, I’m <em>Abdelrahman Youssef</em></h1>
+  <div class="role">I’m a <b id="rt"></b><i></i></div>
+  <p class="d">Senior teller at CIB with a passion for front-end development and seamless user experiences. I build clean, responsive websites and web systems, from a catering brand to a full system for the Egyptian Airforce.</p>
+  <div class="cta"><a class="btn p" href="#projects">View my work →</a><a class="btn" href="Abdelrahman-Youssef-CV.pdf" download>Download CV</a></div>
+  <div class="soc">
+   <a href="https://github.com/abdelrahmanUssef" target="_blank" rel="noopener" aria-label="GitHub">GH</a>
+   <a href="https://www.linkedin.com/in/abdelrahman-ezz" target="_blank" rel="noopener" aria-label="LinkedIn">in</a>
+   <a href="https://www.facebook.com/abdalrahman.ezz" target="_blank" rel="noopener" aria-label="Facebook">f</a>
+   <a href="mailto:abdelrahman.youssef898@gmail.com" aria-label="Email">@</a>
+  </div>
+ </div>
+ <div class="ph">
+  <img src="img/profile.webp" alt="Portrait of Abdelrahman Youssef" width="520" height="520">
+  <div class="badge b"><span class="dot"></span>Open to opportunities</div>
+  <div class="badge a">⚛ React · JS · PHP</div>
+ </div>
+</div>
+<div class="wrap"><div class="stats rv">
+ <div class="stat"><strong>4</strong><span>Featured projects</span></div>
+ <div class="stat"><strong>1 yr</strong><span>Building a web system for the Egyptian Airforce</span></div>
+ <div class="stat"><strong>80+</strong><span>Students taught through my ThreeDOS council</span></div>
+ <div class="stat"><strong>4</strong><span>Student organizations led or supported</span></div>
+</div></div></section>
+
+<section id="about" class="alt"><div class="wrap ag">
+ <div class="rv">
+  <div class="eyebrow">About me</div><h2>Code with a problem-solver’s mindset</h2>
+  <p>Working in banking at CIB while building for the web, I bring a fervent passion for front-end development and a commitment to crafting seamless user experiences. Hands-on projects and collaborative efforts have sharpened my technical skills and built a keen eye for design and functionality.</p>
+  <p>My background in Business and Information Systems lets me bring a unique perspective and creative solutions to any software development project. I’m ready to become a valuable asset to a forward-thinking development team.</p>
+  <blockquote>“First, solve the problem. Then, write the code.”</blockquote>
+ </div>
+ <div class="facts rv">
+  <div class="fact"><h3>🎓 Helwan University</h3><p>B.Sc. Business Information Systems, GPA 3.16, graduated with honors. Graduation project: 96/100 (A+).</p></div>
+  <div class="fact"><h3>🛠 Real-world delivery</h3><p>Freelance client websites and a complete web app built during my service in the Egyptian Airforce.</p></div>
+  <div class="fact"><h3>🌍 Languages</h3><p>Arabic (native) · English (very good) · French (basic)</p></div>
+ </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+ <div class="rv"><div class="eyebrow">Skills</div><h2>My toolbox</h2><p class="lead">Technologies I use to turn ideas into responsive, maintainable websites.</p></div>
+ <div class="sg rv">
+  <div class="sc"><h3>Front-End</h3><div class="chips">
+   <span class="chip"><img src="img/s-html.webp" alt="">HTML5</span><span class="chip"><img src="img/s-css.webp" alt="">CSS3</span><span class="chip"><img src="img/s-js.webp" alt="">JavaScript</span><span class="chip"><img src="img/s-react.webp" alt="">React.js</span><span class="chip"><img src="img/s-jquery.webp" alt="">jQuery</span><span class="chip">Ajax</span><span class="chip">Tailwind CSS</span><span class="chip"><img src="img/s-bootstrap.webp" alt="">Bootstrap</span><span class="chip"><img src="img/s-uikit.webp" alt="">UIkit</span></div></div>
+  <div class="sc"><h3>Back-End &amp; Data</h3><div class="chips"><span class="chip"><img src="img/s-php.webp" alt="">PHP</span><span class="chip"><img src="img/s-mysql.webp" alt="">MySQL</span></div></div>
+  <div class="sc"><h3>Tools</h3><div class="chips"><span class="chip"><img src="img/s-git.webp" alt="">Git</span><span class="chip"><img src="img/s-github.webp" alt="">GitHub</span><span class="chip"><img src="img/s-office.webp" alt="">MS Office</span></div></div>
+ </div>
+ <div class="chips soft rv"><span class="chip">Adaptability</span><span class="chip">Fast learner</span><span class="chip">Leadership</span><span class="chip">Problem solving</span><span class="chip">Critical thinking</span><span class="chip">Time management</span><span class="chip">Teamwork</span><span class="chip">Willing to learn</span></div>
+</div></section>
+
+<section id="projects" class="alt"><div class="wrap">
+ <div class="rv"><div class="eyebrow">Selected work</div><h2>Projects</h2><p class="lead">A mix of client work, community platforms and an internal system built for the Egyptian Airforce.</p></div>
+ <div class="pg">
+  <article class="pc rv"><div class="pi"><img src="img/p-flavvora.webp" alt="Catchy Flavvora catering website" loading="lazy"></div><div class="pb"><span class="tag">Catering · Business website</span><h3>Catchy Flavvora</h3><p>Exceptional catering for any event. A website presenting memorable culinary experiences, where every meal is a masterpiece of taste and elegance.</p><a class="lk" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1PvvK2YYQo892EmYJc7RlG4EZBWbndlgD?usp=sharing">View project →</a></div></article>
+  <article class="pc rv"><div class="pi"><img src="img/p-gamers.webp" alt="Gamers Lounge website" loading="lazy"></div><div class="pb"><span class="tag">Gaming · Community website</span><h3>Gamers Lounge</h3><p>Your go-to hub for gaming news, reviews and insights from top streamers. Connect, play and stay updated in the gaming universe.</p><a class="lk" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1VbWLymT5lvqJx-84lFGDxma0nomk5XL0?usp=sharing">View project →</a></div></article>
+  <article class="pc rv"><div class="pi"><img src="img/p-tedx.webp" alt="TEDxHU official website" loading="lazy"></div><div class="pb"><span class="tag">Organization · Official website</span><h3>TEDxHU Website</h3><p>As Vice Executive of the IT committee at TEDx Helwan University, I helped build the organization’s official website.</p><a class="lk" target="_blank" rel="noopener" href="https://drive.google.com/drive/folders/1TP415YswaQ7C90uAhBK422maS6MZIcu3?usp=sharing">View project →</a></div></article>
+  <article class="pc rv"><div class="pi"><img src="img/p-airforce.webp" alt="Egyptian Airforce web system" loading="lazy"></div><div class="pb"><span class="tag">Government · Internal system</span><h3>Egyptian Airforce System</h3><p>A complete system to monitor airways, complete paperwork faster and print reports on personnel, plans and other matters.</p><span class="lk off">🔒 Not public due to confidential data</span></div></article>
+ </div>
+</div></section>
+
+<section id="experience"><div class="wrap eg">
+ <div class="rv"><div class="eyebrow">Experience</div><h2 class="sub">Where I’ve worked</h2>
+  <div class="tl">
+   <div class="ti"><div class="dt">JUL 2026 – PRESENT</div><h3>Senior Teller</h3><div class="o">CIB</div><p>Serving customers and handling cash transactions as a senior teller.</p></div>
+   <div class="ti"><div class="dt">JUL 2024 – JUL 2026</div><h3>Teller</h3><div class="o">CIB</div><p>Served customers and handled cash transactions as a teller.</p></div>
+   <div class="ti"><div class="dt">PRESENT</div><h3>Web Developer</h3><div class="o">Freelance</div><p>Developing websites for clients who need business and technical solutions for their companies.</p></div>
+   <div class="ti"><div class="dt">MAR 2023 – MAR 2024</div><h3>Web Developer</h3><div class="o">Egyptian Airforce (military service)</div><p>Developed a complete web app for monitoring airways, speeding up paperwork and printing reports, and provided technical support for any technical issue.</p></div>
+   <div class="ti"><div class="dt">AUG – SEP 2021</div><h3>Trainee</h3><div class="o">Contact Company</div><p>Learned the roles and responsibilities of insurance broking organizations.</p></div>
+   <div class="ti"><div class="dt">SEP – DEC 2019</div><h3>Call Center Agent</h3><div class="o">Orange Egypt</div><p>Handled inbound and outbound customer calls and researched information using available resources.</p></div>
+  </div></div>
+ <div class="rv"><div class="eyebrow">Education</div><h2 class="sub">Where I studied</h2>
+  <div class="tl">
+   <div class="ti"><div class="dt">2018 – 2022</div><h3>B.Sc. Business Information Systems</h3><div class="o">Helwan University</div><p>GPA 3.16, Very Good with honors. Graduation project: 96/100 (A+).</p></div>
+   <div class="ti"><div class="dt">2015 – 2018</div><h3>Literary Branch</h3><div class="o">El Gazira Language School</div><p>Grade: 88.2%</p></div>
+  </div></div>
+</div></section>
+
+<section id="activities" class="alt"><div class="wrap">
+ <div class="rv"><div class="eyebrow">Leadership</div><h2>Student activities</h2><p class="lead">Teaching, leading and building for the communities around me.</p></div>
+ <div class="ag3">
+  <article class="ac rv"><div class="im"><img class="m" src="img/a-tedx.webp" alt="At TEDx Helwan University" loading="lazy"><img class="l" src="img/l-tedx.webp" alt="TEDx logo"></div><div class="b"><h3>Vice Executive, IT Committee</h3><div class="o">TEDx Helwan University · 2021–2022</div><p>Taught members the basics of web development and developed the organization’s official website.</p></div></article>
+  <article class="ac rv"><div class="im"><img class="m" src="img/a-threedos.webp" alt="At the ThreeDOS conference" loading="lazy"><img class="l" src="img/l-threedos.webp" alt="ThreeDOS logo"></div><div class="b"><h3>Head, Web Design Council</h3><div class="o">ThreeDOS · 2021–2022</div><p>Led 4 instructors teaching 80+ students. Earlier (2020–2021) delegate of the Web Development Council, learning PHP and MySQL.</p></div></article>
+  <article class="ac rv"><div class="im"><img class="m" src="img/a-scci.webp" alt="At an SCCI workshop" loading="lazy"><img class="l" src="img/l-scci.webp" alt="SCCI logo"></div><div class="b"><h3>Member, IT Committee</h3><div class="o">SCCI · 2020–2021</div><p>Managed technical issues in every workshop and developed forms and the organization’s official site.</p></div></article>
+ </div>
+ <div class="ac t rv" style="margin-top:22px"><div class="b"><h3>Member, IT Committee</h3><div class="o">CFA Ambassadors FMI · 2019–2020</div><p>Managed the organization’s data and helped prepare financial reports using Excel.</p></div></div>
+</div></section>
+
+<section id="honors"><div class="wrap">
+ <div class="rv"><div class="eyebrow">Honors wall</div><h2>Recognition I’m proud of</h2><p class="lead">Awards, internships and training certificates from work, university activities and workshops. Tap any card to see the full certificate.</p></div>
+ <div class="fl rv" id="fl"><button class="on" data-f="all">All (9)</button><button data-f="work">Work (2)</button><button data-f="college">College &amp; leadership (4)</button><button data-f="training">Training (3)</button></div>
+ <div class="hw" id="hw">
+<button class="hc" data-cat="work" data-cap="For being dependable and taking ownership."><span class="hi"><img src="img/h-star_award.webp" alt="Consider it Done Award certificate from CIB" loading="lazy"></span><span class="hb"><span class="hk">Work</span><strong>Consider it Done Award</strong><span class="ho">CIB · Star Award Program</span></span></button>
+<button class="hc" data-cat="college" data-cap="For being the best vice head and for the great effort during the second phase of the TEDxHU journey."><span class="hi"><img src="img/h-tedx_best_vice.webp" alt="Best Vice Head certificate from TEDx Helwan University" loading="lazy"></span><span class="hb"><span class="hk">College</span><strong>Best Vice Head</strong><span class="ho">TEDx Helwan University</span></span></button>
+<button class="hc" data-cat="college" data-cap="Thanks for creativity, commitment and hard work in the last event, ETERNITY."><span class="hi"><img src="img/h-tedx_event.webp" alt="Vice Executive of Information Technology certificate from TEDx Helwan University" loading="lazy"></span><span class="hb"><span class="hk">College</span><strong>Vice Executive of Information Technology</strong><span class="ho">TEDx Helwan University · ETERNITY event</span><span class="hd">17 Sep 2022</span></span></button>
+<button class="hc" data-cat="college" data-cap="Certificate of Appreciation presented to the Web Design Head."><span class="hi"><img src="img/h-head_three_dos.webp" alt="Web Design Head certificate from ThreeDOS" loading="lazy"></span><span class="hb"><span class="hk">College</span><strong>Web Design Head</strong><span class="ho">ThreeDOS · Certificate of Appreciation</span></span></button>
+<button class="hc" data-cat="college" data-cap="Certificate of Achievement as a valued delegate in the Web Development Council."><span class="hi"><img src="img/h-three_dos.webp" alt="Delegate certificate from ThreeDOS 21" loading="lazy"></span><span class="hb"><span class="hk">College</span><strong>Valued Delegate, Web Development Council</strong><span class="ho">ThreeDOS’21 · Certificate of Achievement</span><span class="hd">2021</span></span></button>
+<button class="hc" data-cat="work" data-cap="Seven-week summer internship in the Operations department of an insurance brokerage company (15 Aug – 30 Sep 2021)."><span class="hi"><img src="img/h-contact.webp" alt="Internship certificate from Contact Financial Holding" loading="lazy"></span><span class="hb"><span class="hk">Work</span><strong>Summer Internship, Operations</strong><span class="ho">Contact Financial Holding</span><span class="hd">Aug – Sep 2021</span></span></button>
+<button class="hc" data-cat="training" data-cap="Completion of the web development training course."><span class="hi"><img src="img/h-it_share.webp" alt="Web development training certificate from ITShare" loading="lazy"></span><span class="hb"><span class="hk">Training</span><strong>Web Development Training Course</strong><span class="ho">ITShare training centre</span></span></button>
+<button class="hc" data-cat="training" data-cap="Successfully attended a workshop in the web development field."><span class="hi"><img src="img/h-instant.webp" alt="Web development workshop certificate from INSTANT" loading="lazy"></span><span class="hb"><span class="hk">Training</span><strong>Web Development Workshop</strong><span class="ho">INSTANT · Certificate of Achievement</span></span></button>
+<button class="hc" data-cat="training" data-cap="Attended the C++ course at the Center for Advanced Software and Biomedical Engineering Consultations."><span class="hi"><img src="img/h-casbc.webp" alt="C++ course certificate from CASBEC" loading="lazy"></span><span class="hb"><span class="hk">Training</span><strong>C++ Course</strong><span class="ho">CASBEC · Faculty of Engineering, Cairo University</span></span></button>
+ </div>
+</div></section>
+
+<div id="lb" hidden role="dialog" aria-modal="true" aria-label="Certificate viewer"><button class="x" aria-label="Close">×</button><button class="pv" aria-label="Previous">‹</button><img alt=""><div class="cp"><b></b><span></span></div><button class="nx" aria-label="Next">›</button></div>
+
+<section id="contact"><div class="wrap"><div class="ct rv">
+ <div class="eyebrow">Contact</div><h2>Let’s build something great</h2>
+ <p class="lead">Looking for a front-end developer to join your team or build your website? Send me a message.</p>
+ <div class="cta" style="justify-content:center;margin:0"><a class="btn p" href="mailto:abdelrahman.youssef898@gmail.com">✉ Email me</a><a class="btn" href="tel:+201147542249">☎ +20 114 754 2249</a><a class="btn" href="Abdelrahman-Youssef-CV.pdf" download>Download CV</a></div>
+ <div class="cl"><span>📍 Alsheikh Zayed, Giza, Egypt</span><a href="https://www.linkedin.com/in/abdelrahman-ezz" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/abdelrahmanUssef" target="_blank" rel="noopener">GitHub</a><a href="https://www.facebook.com/abdalrahman.ezz" target="_blank" rel="noopener">Facebook</a></div>
+</div></div></section>
+</main>
+<footer><div class="wrap">© <span id="yr"></span> Abdelrahman Youssef. Designed and built with care.</div></footer>
+
+<script>
+(function(){
+var $=function(s,c){return(c||document).querySelector(s)},$$=function(s){return[].slice.call(document.querySelectorAll(s))};
+document.getElementById('yr').textContent=new Date().getFullYear();
+// theme
+var root=document.documentElement,sv=null;try{sv=localStorage.getItem('theme')}catch(e){}
+if(sv)root.dataset.theme=sv;else if(matchMedia('(prefers-color-scheme: light)').matches)root.dataset.theme='light';
+$('#theme').onclick=function(){var t=root.dataset.theme==='light'?'dark':'light';root.dataset.theme=t;try{localStorage.setItem('theme',t)}catch(e){}};
+// mobile menu
+var L=$('#links');$('#burger').onclick=function(){L.classList.toggle('open')};
+$$('#links a').forEach(function(a){a.onclick=function(){L.classList.remove('open')}});
+// typing roles
+var roles=['Front-End Developer','Web Developer','React Developer','Problem Solver'],ri=0,ci=0,del=false,rt=$('#rt');
+function tick(){var w=roles[ri];ci+=del?-1:1;rt.textContent=w.slice(0,ci);var d=del?45:85;
+ if(!del&&ci===w.length){del=true;d=1600}else if(del&&ci===0){del=false;ri=(ri+1)%roles.length;d=350}setTimeout(tick,d)}
+if(matchMedia('(prefers-reduced-motion: reduce)').matches){rt.textContent=roles[0]}else tick();
+// reveal + active link
+var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.12});
+$$('.rv').forEach(function(el,i){el.style.transitionDelay=(i%3)*80+'ms';io.observe(el)});
+var secs=$$('main section[id]'),links=$$('#links a');
+function spy(){var y=scrollY+120,cur='';secs.forEach(function(s){if(s.offsetTop<=y)cur=s.id});
+ links.forEach(function(a){a.classList.toggle('on',a.getAttribute('href')==='#'+cur)});
+ var h=document.documentElement;$('#bar').style.width=(scrollY/(h.scrollHeight-innerHeight)*100)+'%'}
+addEventListener('scroll',spy,{passive:true});spy();
+// honors wall: filter + lightbox
+var cards=$$('#hw .hc'),lb=$('#lb'),li=lb.querySelector('img'),lt=lb.querySelector('b'),lc=lb.querySelector('span'),cur=0,vis=[],last=null;
+$$('#fl button').forEach(function(b){b.onclick=function(){$$('#fl button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+ cards.forEach(function(c,i){var show=b.dataset.f==='all'||c.dataset.cat===b.dataset.f;c.hidden=!show;if(show){c.style.animation='none';void c.offsetWidth;c.style.animation='';c.style.animationDelay=(i%6)*50+'ms'}})}});
+function show(i){vis=cards.filter(function(c){return !c.hidden});cur=(i+vis.length)%vis.length;var c=vis[cur];
+ li.src=c.querySelector('img').src;li.alt=c.querySelector('img').alt;lt.textContent=c.querySelector('strong').textContent+' · '+c.querySelector('.ho').textContent;lc.textContent=c.dataset.cap}
+function open(c){last=c;lb.hidden=false;document.body.style.overflow='hidden';vis=cards.filter(function(x){return !x.hidden});show(vis.indexOf(c));lb.querySelector('.x').focus()}
+function close(){lb.hidden=true;document.body.style.overflow='';if(last)last.focus()}
+cards.forEach(function(c){c.onclick=function(){open(c)}});
+lb.querySelector('.x').onclick=close;lb.querySelector('.pv').onclick=function(){show(cur-1)};lb.querySelector('.nx').onclick=function(){show(cur+1)};
+lb.onclick=function(e){if(e.target===lb)close()};
+addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')close();if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+})();
+</script>
+</body>
+</html>
